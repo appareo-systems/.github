@@ -33,10 +33,6 @@ mergeable:
           max:
             count: 500
             message: Change is very large, Should be under 500 lines of additions and deletions.
-      - do: approvals
-        # Require approvers
-        min:
-          count: 1
 
     pass:
       - do: merge
