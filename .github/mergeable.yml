@@ -14,7 +14,7 @@ mergeable:
       - do: title
         # Enforce semantic release convention.
         must_include:
-          regex: ^(feat|docs|chore|fix|refactor|test|style|perf|SI-|FP-|KNOX-)(\(\w+\))?:.+$
+          regex: ^(feat|docs|chore|fix|refactor|test|style|perf|SU-|SI-|FP-|KNOX-)(\(\w+\))?:.+$
           message: Semantic release conventions must be followed.
         must_exclude:
           regex: ^\[WIP\]
