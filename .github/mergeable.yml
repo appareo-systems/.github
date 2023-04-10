@@ -15,14 +15,14 @@ mergeable:
         # Enforce semantic release convention.
         must_include:
           regex: ^((?<!([A-Za-z]{1,10})-?)[A-Z]+-\d+:)
-          message: Title must include a properly formatted Jira issue number.
+          message: Title must include a properly formatted Jira issue number with a colon directly following the issue number.
         must_exclude:
           regex: ^\[WIP\]
-      # - do: description
+      - do: description
         # All todo check boxes must be checked.
-        # must_exclude:
-          # regex: \[ \]
-          # message: There are incomplete TODO task(s) unchecked.
+        must_exclude:
+          regex: \[ \]
+          message: There are incomplete TODO task(s) unchecked.
         # no_empty:
           # enabled: true
           # message: Descriptions matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
