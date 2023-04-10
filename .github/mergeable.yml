@@ -14,12 +14,8 @@ mergeable:
       - do: title
         # Enforce semantic release convention.
         must_include:
-          regex:
-            - "^SU-"
-            - "^SI-"
-            - "^FP-"
-            - "^KNOX-"
-          message: Title must include a valid JIRA issue.
+          regex: ^((?<!([A-Za-z]{1,10})-?)[A-Z]+-\d+)
+          message: Title must include a properly formatted Jira issue number.
         must_exclude:
           regex: ^\[WIP\]
       # - do: description
