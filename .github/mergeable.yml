@@ -16,6 +16,8 @@ mergeable:
         must_include:
           regex: ^(feat|docs|chore|fix|refactor|test|style|perf|SI-|FP-|KNOX-)(\(\w+\))?:.+$
           message: Semantic release conventions must be followed.
+        must_exclude:
+          regex: ^\[WIP\]
       - do: description
         # All todo check boxes must be checked.
         must_exclude:
@@ -24,6 +26,10 @@ mergeable:
         no_empty:
           enabled: true
           message: Descriptions matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
+
+      - do: label
+        must_exclude:
+          regex: 'wip'
 
       - do: size
         # No overly large PRs
