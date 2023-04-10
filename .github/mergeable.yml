@@ -1,14 +1,14 @@
 version: 2
 mergeable:
-  - when: schedule.repository
-    validate:
-      - do: stale
-        days: 20
-        type: pull_request
-    pass:
-      - do: comment
-        payload:
-          body: This is old. Is it still relevant? Consider closing or updating the pull request.
+  # - when: schedule.repository
+    # validate:
+      # - do: stale
+        # days: 20
+        # type: pull_request
+    # pass:
+      # - do: comment
+        # payload:
+          # body: This is old. Is it still relevant? Consider closing or updating the pull request.
   - when: pull_request.*, pull_request_review.*
     validate:
       - do: title
@@ -18,30 +18,26 @@ mergeable:
           message: Semantic release conventions must be followed.
         must_exclude:
           regex: ^\[WIP\]
-      - do: description
+      # - do: description
         # All todo check boxes must be checked.
-        must_exclude:
-          regex: \[ \]
-          message: There are incomplete TODO task(s) unchecked.
-        no_empty:
-          enabled: true
-          message: Descriptions matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
+        # must_exclude:
+          # regex: \[ \]
+          # message: There are incomplete TODO task(s) unchecked.
+        # no_empty:
+          # enabled: true
+          # message: Descriptions matter and should not be empty. Provide detail with **what** was changed, **why** it was changed, and **how** it was changed.
 
-      - do: label
-        must_exclude:
-          regex: 'wip'
-
-      - do: size
+      # - do: size
         # No overly large PRs
-        ignore:
-        lines:
-          max:
-            count: 500
-            message: Change is very large, Should be under 500 lines of additions and deletions.
-      - do: approvals
+        # ignore:
+        # lines:
+          # max:
+            # count: 500
+            # message: Change is very large, Should be under 500 lines of additions and deletions.
+      # - do: approvals
         # Require approvers
-        min:
-          count: 1
+        # min:
+          # count: 1
 
     pass:
       - do: merge
