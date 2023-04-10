@@ -1,14 +1,14 @@
 version: 2
 mergeable:
-  # - when: schedule.repository
-    # validate:
-      # - do: stale
-        # days: 20
-        # type: pull_request
-    # pass:
-      # - do: comment
-        # payload:
-          # body: This is old. Is it still relevant? Consider closing or updating the pull request.
+  - when: schedule.repository
+    validate:
+      - do: stale
+        days: 20
+        type: pull_request
+    pass:
+      - do: comment
+        payload:
+          body: This is old. Is it still relevant? Consider closing or updating the pull request.
   - when: pull_request.*, pull_request_review.*
     validate:
       - do: title
