@@ -35,7 +35,7 @@ mergeable:
             message: Change is very large, Should be under 500 lines of additions and deletions.
 
     pass:
-      - do: merge
-        merge_method: 'squash'
+      # - do: merge
+        # merge_method: 'squash'
       - do: checks
         status: 'success'
