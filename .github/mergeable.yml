@@ -30,9 +30,9 @@ mergeable:
       - do: size
         # No overly large PRs
         lines:
-          max:
+          additions:
             count: 500
-            message: Change is very large, Should be under 500 lines of additions and deletions.
+            message: New Lines exceed max. Consider creating a seperate PR for additions.
 
     pass:
       # - do: merge
