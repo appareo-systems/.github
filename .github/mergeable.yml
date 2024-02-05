@@ -31,7 +31,7 @@ mergeable:
         # No overly large PRs
         lines:
           additions:
-            count: 500
+            count: 1000
             message: New Lines exceed max. Consider creating a seperate PR for additions.
 
     pass:
