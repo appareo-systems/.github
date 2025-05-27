@@ -14,7 +14,7 @@ mergeable:
       - do: title
         # Enforce semantic release convention.
         must_include:
-          regex: ^((?<!([A-Za-z]{1,10})-?)[A-Z]+-\d+:)
+          regex: "^[A-Z][A-Z0-9]+-\\d+: "
           message: Title must include a properly formatted Jira issue number with a colon directly following the issue number.
         must_exclude:
           regex: ^\[WIP\]
